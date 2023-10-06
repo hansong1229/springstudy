@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div class="container">
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>이름</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--모델에서 가져온 members라는 리스트를 member라는 이름으로 사용해서 리스트의 시작부터 끝까지 루프를 돌리겠다-->
+			<!--jsp에서 jstl문법 사용한것과 같다고 보면 된다.-->
+			<tr th:each="member : ${members}">
+				<!--member리스트에서 id와 name값을 td태그의 내용으로 대체 -->
+				<td th:text="${member.id}"></td>
+				<td th:text="${member.name}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+
+</body>
+
+</html>
